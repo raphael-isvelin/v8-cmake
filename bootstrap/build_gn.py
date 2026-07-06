@@ -21,7 +21,9 @@ def config_to_str(config):
 
 def gen_build_files(config, config_str, root=os.getcwd()):
     v8_path = os.path.join(root, "v8")
-    if not os.path.exists(os.path.join(v8_path, "out", config_str)):
+    build_dir = os.path.join(v8_path, "out", config_str)
+    build_ninja = os.path.join(build_dir, "build.ninja")
+    if not os.path.exists(build_ninja):
         run_cmd("gn", "gen" ,"out/{0}".format(config_str),
                 "--args={0}".format(config_to_str(config)), cwd=v8_path, root=root, print_result=True)
 

@@ -36,11 +36,12 @@ if __name__ == '__main__':
     version = config.pop("version")
     config_str = config.pop("config_str")
     target_name = config.pop("target_name")
+    skip_install_build_deps = config.pop("skip_install_build_deps", False)
     root = os.getcwd()
     if "root" in config:
         root = config.pop("root")
 
-    checkout(version=version, root=root)
+    checkout(version=version, root=root, skip_install_build_deps=skip_install_build_deps)
     build_gn(config=config, config_str=config_str, target_name=target_name, root=root)
     write_defs(config=config, config_str=config_str, target_name=target_name, root=root)
 

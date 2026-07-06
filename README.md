@@ -1,3 +1,5 @@
+LLM SLOP DISCLAIMER: this fork is making it work for me on a RPi 5 - written fully by Codex for a temporary need. If I end up sticking with it or someone's interested, I'll look into it to see if it makes any sense, clean it, and pull request upstream. But until then, if you stumbled on this repo, I heavily suggest sticking to paxbun's version!
+
 # V8 for CMake
 
 Download and Build V8 using CMake automatically.
